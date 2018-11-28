@@ -61,7 +61,7 @@ int main()
 	
 	Prod product = ProductOfNumber();
 
-	cout << "Num1 : " << product.one << " Num2 : " << product.two << endl;
+	cout << "Palindrome number: "<< (product.one* product.two) << " Num1 : " << product.one << " Num2 : " << product.two << endl;
 	
 	return 0;
 }
