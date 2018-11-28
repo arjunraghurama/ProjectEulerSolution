@@ -36,34 +36,23 @@ Prod ProductOfNumber()
 {
 	Prod num;
 	int largestNumber = 0;
-	map<int, Prod> mymap;
-	
+
 	for (int i = 100; i <= 999; i++)
 	{
 		for (int j = 100; j <= 999; j++)
 		{
 			if (IsPalindrome(i*j))
 			{
-				num.one = i; 
-				num.two = j;
-				mymap.insert(std::pair<int, Prod>(i*j, num));
+				if (i*j > largestNumber)
+				{
+					num.one = i;
+					num.two = j;
+					largestNumber = i * j;
+				}
 			}
 		}
 	}
-	
-	Prod result;
-	for (std::map<int, Prod>::iterator it = mymap.begin(); it != mymap.end(); ++it)
-	{
-		if ((it->first) > largestNumber)
-		{
-			largestNumber = it->first;
-			result.one = it->second.one;
-			result.two = it->second.two;
-		}
-
-	}
-
-	return result;
+	return num;
 }
 
 
